@@ -1,4 +1,4 @@
-# ── Nginx 配置 ConfigMap（任务5：Volume 挂载）────────────
+# Nginx ConfigMap
 apiVersion: v1
 kind: ConfigMap
 metadata:

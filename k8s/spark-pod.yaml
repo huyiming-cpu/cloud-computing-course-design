@@ -1,4 +1,4 @@
-# A-0: Spark on K8s —— PySpark 作业 Pod
+# PySpark Pod
 apiVersion: v1
 kind: Pod
 metadata:

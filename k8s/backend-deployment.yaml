@@ -4,7 +4,7 @@ metadata:
   name: backend
   namespace: default
 spec:
-  replicas: 2                       # 任务要求：副本数=2
+  replicas: 2
   selector:
     matchLabels:
       app: backend
@@ -27,12 +27,12 @@ spec:
             memory: "256Mi"
         envFrom:
         - configMapRef:
-            name: backend-config    # 引用 ConfigMap
+            name: backend-config
         env:
         - name: REDIS_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: redis-secret    # 引用 Secret
+              name: redis-secret
               key: password
         livenessProbe:
           httpGet:
@@ -47,7 +47,7 @@ metadata:
   name: backend-svc
   namespace: default
   annotations:
-    kubernetes.io/elb.class: union    # 华为云必填注解，绑定 ELB
+    kubernetes.io/elb.class: union
 spec:
   type: NodePort
   selector:

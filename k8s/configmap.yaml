@@ -1,4 +1,4 @@
-# ── ConfigMap（非敏感配置）──────────────────────────────
+# Backend ConfigMap
 apiVersion: v1
 kind: ConfigMap
 metadata:

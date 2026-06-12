@@ -1,5 +1,4 @@
-# A-0: Spark on K8s 作业提交
-# 使用 K8s Job 运行 PySpark 分析（替代 Spark Operator，因国际镜像不可达）
+# Spark Job
 apiVersion: batch/v1
 kind: Job
 metadata:

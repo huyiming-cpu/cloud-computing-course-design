@@ -1,4 +1,4 @@
-# ── HPA 弹性伸缩 ── 任务6
+# Backend HPA
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
@@ -17,4 +17,4 @@ spec:
       name: cpu
       target:
         type: Utilization
-        averageUtilization: 60    # CPU 利用率超过 60% 时触发扩容
+        averageUtilization: 60
