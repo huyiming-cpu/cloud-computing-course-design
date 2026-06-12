@@ -1,0 +1,18 @@
+# Docker 镜像 tar（太大，不提交）
+*.tar
+
+# Python
+__pycache__/
+*.pyc
+
+# 环境
+.env
+.venv/
+
+# IDE
+.idea/
+.vscode/
+
+# 系统
+.DS_Store
+Thumbs.db

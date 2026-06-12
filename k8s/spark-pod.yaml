@@ -1,0 +1,19 @@
+# A-0: Spark on K8s —— PySpark 作业 Pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pyspark-wordcount
+  namespace: default
+spec:
+  containers:
+  - name: spark
+    image: swr.cn-north-4.myhuaweicloud.com/cloud-lab2/cloud_project-pyspark:latest
+    command: ["spark-submit", "/opt/spark/work/wordcount.py"]
+    resources:
+      requests:
+        cpu: "500m"
+        memory: "1Gi"
+      limits:
+        cpu: "1"
+        memory: "2Gi"
+  restartPolicy: Never

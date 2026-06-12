@@ -1,0 +1,23 @@
+# A-0: Spark on K8s 作业提交
+# 使用 K8s Job 运行 PySpark 分析（替代 Spark Operator，因国际镜像不可达）
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pyspark-analysis
+  namespace: default
+spec:
+  backoffLimit: 1
+  template:
+    spec:
+      containers:
+      - name: spark
+        image: swr.cn-north-4.myhuaweicloud.com/cloud-lab2/cloud_project-pyspark:latest
+        command: ["spark-submit", "/opt/spark/work/wordcount.py"]
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "512Mi"
+          limits:
+            cpu: "1"
+            memory: "1Gi"
+      restartPolicy: Never
