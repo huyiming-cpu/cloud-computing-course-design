@@ -1,4 +1,4 @@
-# Backend ConfigMap
+# ConfigMap 配置
 apiVersion: v1
 kind: ConfigMap
 metadata:

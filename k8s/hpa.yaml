@@ -1,4 +1,4 @@
-# Backend HPA
+# HPA 配置
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:

@@ -1,10 +1,10 @@
-# Stage 1: install dependencies
+# 阶段1：安装依赖
 FROM python:3.11-slim AS builder
 WORKDIR /build
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt --target /build/packages
 
-# Stage 2: runtime
+# 阶段2：运行时
 FROM python:3.11-slim
 WORKDIR /app
 COPY --from=builder /build/packages /app/packages
